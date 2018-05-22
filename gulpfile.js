@@ -33,9 +33,9 @@ const path = {
 		build : BUILD_DIR
 	},
     
-    sass : {
-        src : [SRC_DIR + 'style/**/*.sass', SRC_DIR + 'sections/**/*.sass'],
-        entry : SRC_DIR + 'style/main.sass',
+    scss : {
+        src : [SRC_DIR + 'style/**/*.scss', SRC_DIR + 'sections/**/*.scss'],
+        entry : SRC_DIR + 'style/main.scss',
 		build : BUILD_DIR + 'css/'
     },
     
@@ -102,7 +102,7 @@ gulp.task('pug', function() {
 
 
 gulp.task('sass', function () {
-  return gulp.src(path.sass.entry)
+  return gulp.src(path.scss.entry)
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass()).on('error', notify.onError({ title: 'Sass' }))
@@ -112,16 +112,16 @@ gulp.task('sass', function () {
     .pipe(csscomb())
     .pipe(rename('style.css'))
     .pipe(sourcemaps.write('/'))
-    .pipe(gulp.dest(path.sass.build))
+    .pipe(gulp.dest(path.scss.build))
     .pipe(browserSync.stream());
 });
 
 
 gulp.task('cssFoundation', function() {
-    return gulp.src(path.cssFoundation.src)
-      .pipe(concatCss('foundation.css'))
-      .pipe(csso())
-      .pipe(gulp.dest(path.cssFoundation.build))
+  return gulp.src(path.cssFoundation.src)
+    .pipe(concatCss('foundation.css'))
+    .pipe(csso())
+    .pipe(gulp.dest(path.cssFoundation.build))
 })
 
 
@@ -181,7 +181,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('watch', function() {
     gulp.watch(path.pug.src, gulp.series('pug'));
-    gulp.watch(path.sass.src, gulp.series('sass'));
+    gulp.watch(path.scss.src, gulp.series('sass'));
     gulp.watch(path.js.src, gulp.series('js'));
     gulp.watch(path.img.src, gulp.series('copyImage'));
     gulp.watch(path.pngSprite.src, gulp.series('pngSprite'));
