@@ -1,6 +1,18 @@
 // COMMON
-@import '/**/*.scss';
+@import 'functions';
+@import 'mixins';
+
+@import 'variables';
+@import 'colors';
+
+@import 'typography';
+@import 'base';
+@import 'layout';
 
 
 // SECTIONS
 @import '../sections/**/*.scss';
+
+
+// SPRITE
+@import 'sprite';

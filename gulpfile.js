@@ -30,6 +30,7 @@ const path = {
     pug : {
 		src : SRC_DIR + 'template/**/*.pug',
         pages : SRC_DIR + 'template/_pages/**/*.pug',
+        locals : './content.json',
 		build : BUILD_DIR
 	},
     
@@ -50,6 +51,14 @@ const path = {
         src: [SRC_DIR + 'js/**/*.js', SRC_DIR + 'sections/**/*.js'],
         build: BUILD_DIR + 'js/'
     },
+
+    jsFoundation : {
+        src : [
+                './node_modules/jquery/dist/jquery.js',
+                './node_modules/masonry-layout/dist/masonry.pkgd.js'
+            ],
+        build : BUILD_DIR + 'js/'
+    },
     
     img : {
         src : [
@@ -62,8 +71,10 @@ const path = {
     
     pngSprite : {
         src : SRC_DIR + '/img/icons/*.png',
+        retinaSrcFilter : SRC_DIR + '/img/icons/*@2x.png',
         buildImg : BUILD_DIR + 'img/',
         imgLocation : '../img/sprite.png',
+        retinaImgLocation : '../img/sprite@2x.png',
         buildFile: SRC_DIR + 'style/'
     },
     
@@ -88,7 +99,7 @@ gulp.task('pug', function() {
 
 	return gulp.src(path.pug.pages)
 		.pipe(pug({
-			/*locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),*/
+			locals: JSON.parse(fs.readFileSync(path.pug.locals, 'utf-8')),
 			pretty : '\t'
 		}))
         .on('error', notify.onError(function(error) {
@@ -136,10 +147,15 @@ gulp.task('pngSprite', function () {
     var spriteData = gulp.src(path.pngSprite.src)
     .pipe(spritesmith({
         imgName : 'sprite.png',
-        cssName : 'sprite.scss',
-        cssFormat : 'css',
+        retinaSrcFilter: path.pngSprite.retinaSrcFilter,
+        retinaImgName: 'sprite@2x.png',
+        cssName : 'spritesmith.scss',
         imgPath : path.pngSprite.imgLocation,
-        padding : 60
+        retinaImgPath : path.pngSprite.retinaImgLocation,
+        padding : 60,
+        cssVarMap : function(sprite) {
+            sprite.name = 'png-icon_' + sprite.name;
+        }
     }));
     
     spriteData.img.pipe(gulp.dest(path.pngSprite.buildImg));
@@ -173,6 +189,12 @@ gulp.task('js', function() {
     .pipe(gulp.dest(path.js.build));
 });
 
+gulp.task('jsFoundation', function() {
+    return gulp.src(path.jsFoundation.src)
+      .pipe(concat('foundation.js'))
+      .pipe(gulp.dest(path.jsFoundation.build))
+  })
+
 
 gulp.task('clean', function(cb) {
     return rimraf(BUILD_DIR, cb);
@@ -180,7 +202,7 @@ gulp.task('clean', function(cb) {
 
 
 gulp.task('watch', function() {
-    gulp.watch(path.pug.src, gulp.series('pug'));
+    gulp.watch([path.pug.src, path.pug.locals], gulp.series('pug'));
     gulp.watch(path.scss.src, gulp.series('sass'));
     gulp.watch(path.js.src, gulp.series('js'));
     gulp.watch(path.img.src, gulp.series('copyImage'));
@@ -207,10 +229,13 @@ gulp.task('default', gulp.series(
   'clean',
   gulp.parallel(
     'cssFoundation',
+    'jsFoundation',
     'copyImage',
     'copyFont',
     'pngSprite',
-    'svgSprite',
+    'svgSprite'
+  ),
+  gulp.parallel(
     'sass',
     'pug',
     'js'

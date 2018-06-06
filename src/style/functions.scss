@@ -1,0 +1,4 @@
+@function rem($size) {
+  $remSize: $size / 16; //16 is a Base Size
+  @return #{$remSize}rem;
+}

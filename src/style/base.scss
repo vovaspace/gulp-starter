@@ -1,19 +1,35 @@
 html {
-    font-size: 16px;
-    box-sizing: border-box; // Border-box Fix
+  box-sizing: border-box; // Border-box Fix
+
+  font-size: 16px;
 }
+
 
 // Border-box Fix
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
+
 body {
-    margin: 0 auto;
+  margin: 0 auto;
 }
-    
+
+
+button {
+  cursor: pointer;
+
+  outline: none;
+}
+
+
+input {
+  outline: none;
+}
+
+
 .f-clearfix::after {
-    content: '';
-    display: table;
-    clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
