@@ -3,16 +3,54 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Gulp Starter</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- meta(name='viewport' content='width=device-width, initial-scale=1')-->
+		<meta name="viewport" content="width=640">
 		<link rel="stylesheet" href="/gulp-starter/css/foundation.css">
 		<link rel="stylesheet" href="/gulp-starter/css/style.min.css">
 	</head>
 	<body>
 		<div class="example l-container">
-			<h1 class="h1 example__title">Gulp Starter</h1>
-			<p class="text-m example__description">It works!</p>
-			<p class="text-m example__description"><a href="https://github.com/vovaspace/gulp-starter">GitHub</a></p>
+			<header class="example__header">
+				<h1 class="h1 example__title">Gulp Starter</h1>
+			</header>
+			<main class="example__main">
+				<div class="example__main-container">
+					<section class="example__section example__section_wide">
+						<h2 class="h2 example__section-title">Clone, install dependencies, <br>build and serve on localhost:3000</h2>
+						<div class="example__commands-container">
+							<div class="example__code-block"><span class="text-m">git clone https://github.com/vovaspace/gulp-starter.git</span><span class="example__next-icon">
+									<svg>
+										<use xlink:href="#icon-next"></use>
+									</svg></span>
+							</div>
+							<div class="example__code-block"><span class="text-m">npm i</span><span class="example__next-icon">
+									<svg>
+										<use xlink:href="#icon-next"></use>
+									</svg></span>
+							</div>
+							<div class="example__code-block"><span class="text-m">gulp</span>
+							</div>
+						</div>
+					</section>
+					<section class="example__section">
+						<h2 class="h2 example__section-title">Build</h2>
+						<div class="example__commands-container">
+							<div class="example__code-block"><span class="text-m">gulp build</span>
+							</div>
+						</div>
+					</section>
+					<section class="example__section">
+						<h2 class="h2 example__section-title">Deploy /build on GitHub Pages</h2>
+						<div class="example__commands-container">
+							<div class="example__code-block"><span class="text-m">gulp deploy</span>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer class="example__footer"><a class="text-m example__link" href="https://github.com/vovaspace/gulp-starter" title="GitHub Repository" target="_blank">Fork on GitGub</a></footer>
 		</div>
-		<!-- include _includes/_page-bottom-->
+		<!-- script(src='/gulp-starter/js/foundation.js')-->
+		<script src="/gulp-starter/js/app.js"></script>
 	</body>
 </html>
