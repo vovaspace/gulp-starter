@@ -2,7 +2,7 @@
 	'use strict';
 
 	var file = '/symbol_sprite.html',
-		revision = 5.1;
+			revision = 1.0;
 
 	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
 		return true;

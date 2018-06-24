@@ -3,25 +3,139 @@
   flex-direction: column;
 
   min-height: 100vh;
-  padding-top: rem(64);
-  padding-bottom: rem(64);
+  padding-top: rem(44);
+  padding-bottom: rem(32);
 
-  background-color: $color-spiro-disco-ball;
+  color: $color-white;
+  background-color: $color-muddy-ruby;
+  background-image: linear-gradient(to left, $color-muddy-ruby, $color-ruby, $color-muddy-ruby);
 
 
   &__title {
     margin-top: 0;
-    margin-bottom: rem(20);
+    margin-bottom: rem(36);
+
+    color: $color-salmon;
   }
 
 
-  &__description {
+  &__main {
+
+  }
+
+
+  &__main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-right: rem(-44);
+    margin-bottom: rem(-44);
+  }
+
+
+  &__section {
+    margin-right: rem(44);
+    margin-bottom: rem(44);
+
+    &_wide {
+      min-width: 100%;
+    }
+  }
+
+
+  &__section-title {
     margin-top: 0;
-    margin-bottom: rem(12);
+    margin-bottom: rem(14);
+  }
+
+
+  &__commands-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-width: rem(720);
+    margin-bottom: rem(-10);
+  }
+
+
+  &__code-block {
+    position: relative;
+
+    display: inline-block;
+
+    min-width: rem(196);
+    min-height: rem(52);
+    padding-top: rem(13);
+    padding-right: rem(36);
+    padding-bottom: rem(15);
+    padding-left: rem(36);
+    margin-right: rem(44);
+    margin-bottom: rem(10);
+
+    color: $color-grass;
+    border-radius: rem(4);
+    background-color: $color-frog;
 
 
     &:last-child {
-      margin-bottom: 0;
+      margin-right: 0;
+    }
+
+
+    &::before {
+      position: absolute;
+      top: rem(13);
+      left: rem(14);
+
+      content: '$';
+
+      line-height: rem(24);
+    }
+  }
+
+
+  &__next-icon {
+    @include svg;
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+
+    display: block;
+    width: rem(12);
+    height: rem(22);
+
+    transform: translate(rem(16), rem(-11));
+
+    fill: $color-white;
+  }
+
+
+  &__footer {
+    padding-top: rem(96);
+    margin-top: auto;
+  }
+
+
+  &__link {
+    padding-bottom: rem(4);
+
+    transition: 100ms;
+
+    color: $color-white;
+    border-bottom: rem(1) solid $color-white;
+    
+    text-decoration: none;
+
+    line-height: rem(36);
+
+
+    &:hover {
+      padding-bottom: rem(5);
+
+      border-bottom-width: rem(2);
     }
   }
 }

@@ -1,5 +1,5 @@
 $breakpoint-l: rem(1000);
-$breakpoint-m: rem(768);
+$breakpoint-m: rem(760);
 $breakpoint-s: rem(480);
 $breakpoint-min: rem(320);
 
@@ -15,7 +15,7 @@ $breakpoint-min: rem(320);
 
   &-container {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: rem(64);
+    padding-right: rem(64);
   }
 }

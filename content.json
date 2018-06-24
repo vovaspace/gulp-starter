@@ -1,9 +1,30 @@
 {
   "example": {
     "title": "Gulp Starter",
-    "description": [
-      "It works!",
-      "<a href=\"https://github.com/vovaspace/gulp-starter\">GitHub</a>"
+    "sections": [
+      {
+        "title": "Clone, install dependencies, <br>build and serve on localhost:3000",
+        "commands": [
+          "git clone https://github.com/vovaspace/gulp-starter.git",
+          "npm i",
+          "gulp"
+        ],
+        "isWide": true
+      },
+      {
+        "title": "Build",
+        "commands": [
+          "gulp build"
+        ],
+        "isWide": false
+      },
+      {
+        "title": "Deploy /build on GitHub Pages",
+        "commands": [
+          "gulp deploy"
+        ],
+        "isWide": false
+      }
     ]
   }
 }

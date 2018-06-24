@@ -1,4 +1,5 @@
-$primary-font-family: Arial, 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+$primary-font-family: 'Monaco', 'Lucida Console', monospace;
+$secondary-font-family: Helvetica, Arial, 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
 
 // @font-face {
@@ -11,10 +12,19 @@ $primary-font-family: Arial, 'Open Sans', -apple-system, system-ui, BlinkMacSyst
 
 h1,
 .h1 {
-  font-family: $primary-font-family;
-  font-size: rem(44);
+  font-family: $secondary-font-family;
+  font-size: rem(78);
   font-weight: 700;
   line-height: 1.2;
+}
+
+
+h2,
+.h2 {
+  font-family: $primary-font-family;
+  font-size: rem(18);
+  font-weight: 400;
+  line-height: 1.35;
 }
 
 
@@ -22,6 +32,8 @@ h1,
   
   
   &-m {
-    font-size: rem(16);
+    font-family: $primary-font-family;
+    font-size: rem(18);
+    line-height: 1.35;
   }
 }

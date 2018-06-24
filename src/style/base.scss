@@ -13,7 +13,8 @@ html {
 
 
 body {
-  min-width: $breakpoint-min;
+  // min-width: $breakpoint-min;
+  min-width: rem(640);
   margin: 0;
   padding: 0;
 }

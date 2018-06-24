@@ -5,7 +5,21 @@ block title
     
 block body
   .example.l-container
-    h1.h1.example__title= example.title
+    header.example__header
+      h1.h1.example__title= example.title
 
-    - for (i = 0; i < example.description.length; i++)
-      p.text-m.example__description !{example.description[i]}
+    main.example__main
+      .example__main-container
+        - for (i = 0; i < example.sections.length; i++)
+          section.example__section(class!= example.sections[i].isWide ? 'example__section_wide' : '')
+            h2.h2.example__section-title !{example.sections[i].title}
+            .example__commands-container
+              - for (k = 0; k < example.sections[i].commands.length; k++)
+                .example__code-block
+                  span.text-m= example.sections[i].commands[k]
+                  if (k < example.sections[i].commands.length - 1)
+                    span.example__next-icon
+                      svg: use(xlink:href='#icon-next')
+
+    footer.example__footer
+      a(href='https://github.com/vovaspace/gulp-starter' title='GitHub Repository' target='_blank').text-m.example__link Fork on GitGub
