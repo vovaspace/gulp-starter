@@ -216,22 +216,6 @@ gulp.task('jsFoundation', function() {
 });
 
 
-// 'gulp deploy' to deploying build into GitHub Pages
-gulp.task('deploy', function() {
-  return gulp.src(path.deploy.replaceFiles)
-    // Replays paths like 'src = "/img/pic.jpg"'
-    .pipe(replace(/['"]\/[A-Za-z0-9\._\/]+\.[A-Za-z]+['"]/g, function(replacement) {
-      // Save quote format
-      if (replacement[0] == '"') {
-        return '"/' + GH_PAGES_DIR + replacement.replace(/["]+/g, '') + '"'
-      }
-      return "'/" + GH_PAGES_DIR + replacement.replace(/[']+/g, '') + "'";
-    }))
-    .pipe(addsrc(path.deploy.otherFiles)) 
-    .pipe(ghPages());
-});
-
-
 gulp.task('clean', function(cb) {
   return rimraf(BUILD_DIR, cb);
 });
@@ -259,9 +243,9 @@ gulp.task('serve', function() {
 
 
 
-// BUILD
+// BUILD: 'gulp build'
 
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
   'clean',
   gulp.parallel(
     'cssFoundation',
@@ -275,7 +259,31 @@ gulp.task('default', gulp.series(
     'sass',
     'pug',
     'js'
-  ),
+  )
+));
+
+
+// DEPLOY: 'gulp deploy' to deploying build into GitHub Pages
+// DON'T FORGET to build before deploy!
+gulp.task('deploy', function() {
+  return gulp.src(path.deploy.replaceFiles)
+    // Replays paths like 'src = "/img/pic.jpg"'
+    .pipe(replace(/['"]\/[A-Za-z0-9\._\/]+\.[A-Za-z]+['"]/g, function(replacement) {
+      // Save quote format
+      if (replacement[0] == '"') {
+        return '"/' + GH_PAGES_DIR + replacement.replace(/["]+/g, '') + '"'
+      }
+      return "'/" + GH_PAGES_DIR + replacement.replace(/[']+/g, '') + "'";
+    }))
+    .pipe(addsrc(path.deploy.otherFiles)) 
+    .pipe(ghPages());
+});
+
+
+// DEFAULT: build and serve
+
+gulp.task('default', gulp.series(
+  'build',
   gulp.parallel(
     'watch',
     'serve'
