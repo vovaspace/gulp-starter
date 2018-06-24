@@ -1,0 +1,102 @@
+h1,
+.h1 {
+  font-family: Arial, "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-m {
+  font-size: 1rem;
+}
+
+.l-container {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+button {
+  outline: none;
+}
+
+a,
+label,
+input,
+select,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.f-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.h-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.example {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #0fbcf9;
+}
+
+.example__title {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.example__description {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.example__description:last-child {
+  margin-bottom: 0;
+}
+
+/* .png-icon_windows:hover {
+  @extend .png-icon_windows_hovered;
+} */
