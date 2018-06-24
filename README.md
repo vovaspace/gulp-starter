@@ -1,5 +1,5 @@
 # Gulp Starter
-vovaspace.github.io/gulp-starter
+https://vovaspace.github.io/gulp-starter
 
 ## Clone, install dependencies,  build and serve on localhost:3000
 ```
