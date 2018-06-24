@@ -1,10 +1,28 @@
-/*.example {
-    height: 4.875rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-}*/
+.example {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  padding-top: rem(64);
+  padding-bottom: rem(64);
+
+  background-color: $color-spiro-disco-ball;
+
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: rem(20);
+  }
+
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: rem(12);
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
     

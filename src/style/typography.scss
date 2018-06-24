@@ -1,6 +1,27 @@
-// $primary-font-family: 'Source Sans Pro', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$primary-font-family: Arial, 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
 
-/*h1 {
-    font-size: 1.5rem;
-}*/
+// @font-face {
+//   font-family: 'Open Sans';
+//   src: '../fonts/OpenSans-Bold.ttf' format('truetype');
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
+
+h1,
+.h1 {
+  font-family: $primary-font-family;
+  font-size: rem(44);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+.text {
+  
+  
+  &-m {
+    font-size: rem(16);
+  }
+}

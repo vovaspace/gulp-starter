@@ -1,0 +1,11 @@
+extends ../general
+    
+block title
+  title Gulp Starter
+    
+block body
+  .example.l-container
+    h1.h1.example__title= example.title
+
+    - for (i = 0; i < example.description.length; i++)
+      p.text-m.example__description !{example.description[i]}

@@ -1,3 +1,15 @@
+$breakpoint-l: rem(1000);
+$breakpoint-m: rem(768);
+$breakpoint-s: rem(480);
+$breakpoint-min: rem(320);
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content
+  }
+}
+
+
 .l {
 
 

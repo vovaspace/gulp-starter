@@ -2,6 +2,7 @@ html {
   box-sizing: border-box; // Border-box Fix
 
   font-size: 16px;
+  font-family: $primary-font-family;
 }
 
 
@@ -12,24 +13,52 @@ html {
 
 
 body {
-  margin: 0 auto;
+  min-width: $breakpoint-min;
+  margin: 0;
+  padding: 0;
 }
 
 
 button {
   cursor: pointer;
+}
 
+
+input,
+select,
+button {
   outline: none;
 }
 
 
-input {
-  outline: none;
+a,
+label,
+input,
+select,
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
+// Fixes
 .f-clearfix::after {
   content: '';
   display: table;
   clear: both;
+}
+
+
+// Helpers
+.h-visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
 }

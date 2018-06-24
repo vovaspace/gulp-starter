@@ -17,9 +17,11 @@
 }
 
 
-@mixin ios-safari-fix {
-  border-radius: 0;
-  -webkit-appearance: none;
+@mixin ios-text-field-fix ($isBorderRadius: true) {
+  @if not $isBorderRadius {
+    border-radius: 0; 
+  }
+   -webkit-appearance: none;
 }
 
 
