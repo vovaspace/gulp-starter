@@ -77,6 +77,7 @@
     color: $color-grass;
     border-radius: rem(4);
     background-color: $color-frog;
+    box-shadow: rem(0) rem(2) rem(10) rgba($color-swamp, 0.3);
 
 
     &:last-child {
@@ -114,7 +115,7 @@
 
 
   &__footer {
-    padding-top: rem(96);
+    padding-top: rem(64);
     margin-top: auto;
   }
 
