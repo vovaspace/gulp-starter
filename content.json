@@ -6,6 +6,8 @@
         "title": "Clone, install dependencies, <br>build and serve on localhost:3000",
         "commands": [
           "git clone https://github.com/vovaspace/gulp-starter.git",
+          "cd gulp-starter",
+          "rm -rf .git",
           "npm i",
           "gulp"
         ],
