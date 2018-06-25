@@ -159,6 +159,8 @@ button {
   color: #4efe24;
   border-radius: 0.25rem;
   background-color: #3c4640;
+  -webkit-box-shadow: 0rem 0.125rem 0.625rem rgba(68, 72, 66, 0.3);
+          box-shadow: 0rem 0.125rem 0.625rem rgba(68, 72, 66, 0.3);
 }
 
 .example__code-block:last-child {
@@ -192,7 +194,7 @@ button {
 }
 
 .example__footer {
-  padding-top: 6rem;
+  padding-top: 4rem;
   margin-top: auto;
 }
 
