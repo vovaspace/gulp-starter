@@ -24,9 +24,9 @@ gulp deploy
 ```
 
 ## Features
-*Live reloading with BrowserSync.
-*Github Pages deployment.
-*Autoprefixer configuration.
-*SVG and PNG sprites.
-*`px` to `rem` function, mixins for inlining media queries and helper-classes.
-*`[Normalize.css](http://necolas.github.io/normalize.css/)` for CSS normalizations and common bug fixes.
+* Live reloading with BrowserSync. 
+* Github Pages deployment. 
+* Autoprefixer configuration. 
+* SVG and PNG sprites. 
+* `px` to `rem` function, mixins for inlining media queries and helper-classes. 
+* [Normalize.css](http://necolas.github.io/normalize.css/) for CSS normalizations and common bug fixes.
