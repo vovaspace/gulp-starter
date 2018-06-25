@@ -1,19 +1,32 @@
 # Gulp Starter
-https://vovaspace.github.io/gulp-starter
+A starter toolkit based on Pug, SCSS and BEM. 
 
-## Clone, install dependencies,  build and serve on localhost:3000
+[Homepage →](https://vovaspace.github.io/gulp-starter)
+
+## Getting Started
+#### Clone, install dependencies, build and serve on localhost:3000
 ```
 git clone https://github.com/vovaspace/gulp-starter.git
+cd gulp-starter
+rm -rf .git
 npm i
 gulp
 ```
 
-## Build
+### Build
 ```
 gulp build
 ```
 
-## Deploy /build on GitHub Pages
+### Deploy /build on GitHub Pages
 ```
 gulp deploy
 ```
+
+## Features
+*Live reloading with BrowserSync.
+*Github Pages deployment.
+*Autoprefixer configuration.
+*SVG and PNG sprites.
+*`px` to `rem` function, mixins for inlining media queries and helper-classes.
+*`[Normalize.css](http://necolas.github.io/normalize.css/)` for CSS normalizations and common bug fixes.
