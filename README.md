@@ -4,7 +4,7 @@ A starter toolkit based on Pug, SCSS and BEM.
 [Homepage →](https://vovaspace.github.io/gulp-starter)
 
 ## Getting Started
-#### Clone, install dependencies, build and serve on localhost:3000
+### Clone, install dependencies, build and serve on localhost:3000
 ```
 git clone https://github.com/vovaspace/gulp-starter.git
 cd gulp-starter
